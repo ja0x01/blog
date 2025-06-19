@@ -1,0 +1,26 @@
+---
+title: categorias
+permalink: /categories/
+layout: page
+---
+
+<div class="archive">
+  <a class="archive-item" href="#">all</a>
+  {%- for category in site.categories -%} 
+    {% capture name %}{{ category | first }}{% endcapture %}
+    <a class="archive-item" href="#{{name}}">{{ name }}</a> 
+  {%- endfor -%}
+</div>
+
+{%- for category in site.categories -%}
+  {%- capture name -%}{{ category | first }}{%- endcapture -%}
+  <h2 id="{{ name }}">{{ name | upcase }}</h2>
+  {%- for post in site.categories[name] -%}
+    <article class="post-item" id="results-container">
+      <span class="post-item-date">{{ post.date | date: "%d %B %Y" }}</span>
+      <h3 class="post-item-title">
+        <a href="{{ post.url }}">{{ post.title | escape }}</a>
+      </h3> 
+    </article>
+  {%- endfor -%}
+{%- endfor -%}

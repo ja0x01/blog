@@ -1,0 +1,81 @@
+title: ja1
+description: >-
+  Engenheiro de Software e AppSec, apaixonado por hardware, hacking, Linux e programação.
+  <br>
+  I use Arch, btw.
+lang: pt-BR
+timezone: America/Sao_Paulo
+mode: dark
+
+author:
+  name: ja1
+  bio: >-
+    Engenheiro de Software e AppSec, apaixonado por hardware, hacking, Linux e programação.
+    <br>
+    I use Arch, btw.
+  username: ja1
+  github: ja0x01
+  hacking_club: 9876
+  cphc: 132
+  linkedin: joaomarcelosgomes
+
+url: "https://klise.now.sh"
+baseurl:
+permalink: /:title/
+google_analytics:
+fb_appid:
+
+collections:
+  posts:
+    output: true
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: post
+      comments: false
+
+jekyll_compose:
+  post_default_front_matter:
+    modified:
+    tags: []
+    description:
+  draft_default_front_matter:
+    modified:
+    tags: []
+    description:
+
+number_of_posts: 5
+
+sass:
+  style: compressed
+
+include:
+  - _redirects
+  - .htaccess
+
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - CHANGELOG.md
+  - README.md
+  - node_modules
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - lighthouse.png
+  - klise-*.gem
+  - klise.gemspec
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-postfiles

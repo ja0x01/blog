@@ -1,0 +1,26 @@
+---
+title: tags
+permalink: /tags/
+layout: page
+---
+
+<div class="archive">
+  <a class="archive-item" href="#">all</a>
+  {%- for tag in site.tags -%} 
+    {% capture name %}{{ tag | first }}{% endcapture %}
+    <a class="archive-item" href="#{{name}}">{{ name }}</a> 
+  {%- endfor -%}
+</div>
+
+{%- for tag in site.tags -%}
+  {%- capture name -%}{{ tag | first }}{%- endcapture -%}
+  <h2 id="{{ name }}">{{ name | upcase }}</h2>
+  {%- for post in site.tags[name] -%}
+    <article class="post-item" id="results-container">
+      <span class="post-item-date">{{ post.date | date: "%d %B %Y" }}</span>
+      <h3 class="post-item-title">
+        <a href="{{ post.url }}">{{ post.title | escape }}</a>
+      </h3> 
+    </article>
+  {%- endfor -%}
+{%- endfor -%}

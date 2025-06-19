@@ -1,0 +1,15 @@
+- title: home
+  url: /
+  external: false
+
+- title: arquivo
+  url: /archive/
+  external: false
+
+- title: categorias
+  url: /categories/
+  external: false
+
+- title: tags
+  url: /tags/
+  external: false
